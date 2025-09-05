@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocacia e Consultoria Jurídica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .icon {
+            width: 48px;
+            height: 48px;
+        }
+        /* Efeito de zoom na imagem da equipe */
+        .team-image-zoom {
+            transition: transform 0.3s ease-in-out;
+        }
+        .team-image-zoom:hover {
+            transform: scale(1.05);
+        }
+        .form-input {
+            @apply w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all duration-300;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .animate-slideInRight {
+            animation: slideInRight 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-lg fixed top-0 w-full z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Adicionando um logotipo no lugar do texto -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/0A2542/FFFFFF?text=Logo" alt="Logotipo do Escritório de Advocacia" class="h-10 w-10 rounded-full">
+                <span class="text-2xl font-bold text-gray-900">MB Advocacia</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Início</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Sobre Nós</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Serviços</a>
+                <a href="#why-us" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Diferenciais</a>
+                <a href="#team" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Equipe</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contato</a>
+            </div>
+            <button id="menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none" aria-label="Abrir menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4">
+            <div class="flex flex-col items-center space-y-4">
+                <a href="#home" class="text-gray-600 hover:text-blue-600">Início</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600">Sobre Nós</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600">Serviços</a>
+                <a href="#why-us" class="text-gray-600 hover:text-blue-600">Diferenciais</a>
+                <a href="#team" class="text-gray-600 hover:text-blue-600">Equipe</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="mt-20">
+        <!-- Hero Section com imagem de fundo -->
+        <section id="home" class="relative py-24 md:py-36 rounded-b-[50px] overflow-hidden">
+            <!-- Imagem de fundo e sobreposição para o texto -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1575990262100-349071b69739?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+            <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
+            <div class="relative container mx-auto text-center px-6 text-white">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fadeIn" style="animation-delay: 0.1s;">
+                    Sua segurança jurídica e consultoria estratégica.
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fadeIn" style="animation-delay: 0.3s;">
+                    Soluções jurídicas personalizadas em direito civil, familiar e empresarial.
+                </p>
+                <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 animate-fadeIn" style="animation-delay: 0.5s;">
+                    Agende uma Consulta
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fadeIn">Nossa Missão</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 animate-fadeIn" style="animation-delay: 0.2s;">
+                    Acreditamos que a advocacia é mais do que resolver conflitos; é sobre construir confiança e encontrar a melhor solução para cada cliente. Nosso compromisso é com a ética, a transparência e a excelência em cada caso.
+                </p>
+                <div class="p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 animate-fadeIn" style="animation-delay: 0.4s;">
+                    <div class="flex items-center justify-center mb-4">
+                        <!-- SVG para icon de Missão -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-blue-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0v-8.25m0 0a4.5 4.5 0 0 1-4.5-4.5M12 12.75a4.5 4.5 0 0 1 4.5-4.5m-4.5 4.5v4.5m-2.25-4.5a4.5 4.5 0 0 1-4.5-4.5m4.5 4.5v-4.5m2.25 4.5a4.5 4.5 0 0 0 4.5-4.5m-4.5 4.5v-4.5" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-gray-900 ml-4">Nossa Filosofia</h3>
+                    </div>
+                    <p class="text-gray-700">Trabalhamos para garantir que seus direitos sejam protegidos e que você receba a atenção e a orientação jurídica que merece. Nosso foco é oferecer soluções eficazes e duradouras, construindo um relacionamento de confiança.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6 animate-fadeIn">Nossas Áreas de Atuação</h2>
+                <p class="text-center text-gray-600 text-lg mb-12 max-w-3xl mx-auto animate-fadeIn" style="animation-delay: 0.2s;">
+                    Oferecemos consultoria e representação jurídica em diversas áreas, com foco na sua tranquilidade e no sucesso dos seus negócios e vida pessoal.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Serviço 1: Direito Civil -->
+                    <div class="relative bg-gray-50 p-8 rounded-2xl shadow-md border-t-4 border-blue-600 text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 animate-fadeIn" style="animation-delay: 0.4s;">
+                        <div class="flex justify-center mb-4">
+                             <!-- Civil Law SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                <path d="M12 22s-4-2-4-7V5l4-3 4 3v10s-4 2-4 7z"></path>
+                                <line x1="12" y1="22" x2="12" y2="15"></line>
+                                <polyline points="20 12 12 22 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Direito Civil</h3>
+                        <p class="text-gray-700">Contratos, responsabilidade civil, indenizações, obrigações e direito do consumidor. Protegemos seus interesses em todas as esferas.</p>
+                    </div>
+                    <!-- Serviço 2: Direito Empresarial -->
+                    <div class="relative bg-gray-50 p-8 rounded-2xl shadow-md border-t-4 border-blue-600 text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 animate-fadeIn" style="animation-delay: 0.6s;">
+                        <div class="flex justify-center mb-4">
+                            <!-- Business Law SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                <rect x="3" y="10" width="18" height="12" rx="2" ry="2"></rect>
+                                <path d="M12 2V10"></path>
+                                <path d="M10 5L14 7"></path>
+                                <path d="M14 5L10 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Direito Empresarial</h3>
+                        <p class="text-gray-700">Constituição de empresas, contratos comerciais, fusões e aquisições, propriedade intelectual e consultoria para startups.</p>
+                    </div>
+                    <!-- Serviço 3: Direito de Família -->
+                    <div class="relative bg-gray-50 p-8 rounded-2xl shadow-md border-t-4 border-blue-600 text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 animate-fadeIn" style="animation-delay: 0.8s;">
+                        <div class="flex justify-center mb-4">
+                             <!-- Family Law SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                <path d="M12 2a5 5 0 0 0-5 5c0 4 5 10 5 10s5-6 5-10a5 5 0 0 0-5-5z"></path>
+                                <path d="M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Direito de Família</h3>
+                        <p class="text-gray-700">Divórcio, pensão alimentícia, guarda, inventário e planejamento sucessório, com sensibilidade e discrição.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="py-20 md:py-28 bg-gray-50 rounded-2xl">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 animate-fadeIn">Por que nos escolher?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 animate-fadeIn" style="animation-delay: 0.2s;">
+                    Nosso compromisso é com a sua tranquilidade e com a busca por soluções jurídicas eficientes e personalizadas.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Diferencial 1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 transform hover:scale-105 transition-all duration-300 animate-fadeIn" style="animation-delay: 0.4s;">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                <path d="M12 19c-3.31 0-6-2.69-6-6s6-12 6-12 6 8.69 6 12-2.69 6-6 6z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Especialização</h3>
+                        <p class="text-gray-700 text-sm">Profissionais com vasto conhecimento em áreas estratégicas.</p>
+                    </div>
+                    <!-- Diferencial 2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 transform hover:scale-105 transition-all duration-300 animate-fadeIn" style="animation-delay: 0.6s;">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Transparência</h3>
+                        <p class="text-gray-700 text-sm">Comunicação clara e constante em todas as etapas do processo.</p>
+                    </div>
+                    <!-- Diferencial 3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 transform hover:scale-105 transition-all duration-300 animate-fadeIn" style="animation-delay: 0.8s;">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Agilidade</h3>
+                        <p class="text-gray-700 text-sm">Soluções rápidas e eficazes para suas necessidades jurídicas.</p>
+                    </div>
+                    <!-- Diferencial 4 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 transform hover:scale-105 transition-all duration-300 animate-fadeIn" style="animation-delay: 1s;">
+                        <div class="flex justify-center mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Atendimento Humanizado</h3>
+                        <p class="text-gray-700 text-sm">Relação próxima e atenciosa, focada em suas necessidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 animate-fadeIn">Conheça Nossa Equipe</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 animate-fadeIn" style="animation-delay: 0.2s;">
+                    Nossos profissionais são especialistas em suas áreas de atuação, dedicados a oferecer a melhor assessoria jurídica com ética e excelência.
+                </p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Member 1 -->
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 transform hover:scale-105 transition-all duration-300 animate-fadeIn" style="animation-delay: 0.4s;">
+                        <!-- <img src="https://images.unsplash.com/photo-1594101894411-e633d7b05596?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto de Jane Smith, advogada sênior" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover border-4 border-blue-200 team-image-zoom"> -->
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Jane Smith</h3>
+                        <p class="text-blue-600 font-semibold mb-2">Advogada Sênior - Direito Civil</p>
+                        <p class="text-gray-700 text-sm">Especialista em contratos e responsabilidade civil, com mais de 15 anos de experiência em casos complexos.</p>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 transform hover:scale-105 transition-all duration-300 animate-fadeIn" style="animation-delay: 0.6s;">
+                        <!-- <img src="https://images.unsplash.com/photo-1560250097-f58c7e954157?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto de John Doe, advogado associado" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover border-4 border-blue-200 team-image-zoom"> -->
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">John Doe</h3>
+                        <p class="text-blue-600 font-semibold mb-2">Advogado Associado - Direito Empresarial</p>
+                        <p class="text-gray-700 text-sm">Focado em consultoria para startups e novos negócios, auxiliando empresas a crescerem de forma segura e estratégica.</p>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 transform hover:scale-105 transition-all duration-300 animate-fadeIn" style="animation-delay: 0.8s;">
+                        <!-- <img src="https://images.unsplash.com/photo-1582210595301-20a846e492f2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto de Maria Silva, advogada" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover border-4 border-blue-200 team-image-zoom"> -->
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Maria Silva</h3>
+                        <p class="text-blue-600 font-semibold mb-2">Advogada - Direito de Família</p>
+                        <p class="text-gray-700 text-sm">Com uma abordagem sensível e empática, atua em questões de divórcio, guarda e inventário, buscando soluções amigáveis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <!-- <section id="testimonials" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 animate-fadeIn">O que nossos clientes dizem</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    < Depoimento 1 
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 animate-fadeIn" style="animation-delay: 0.4s;">
+                        <blockquote class="text-gray-700 italic">
+                            "A equipe demonstrou um profissionalismo e uma dedicação excepcionais. A orientação jurídica foi clara e precisa, o que me deu total segurança em um momento difícil."
+                        </blockquote>
+                        <p class="mt-4 text-gray-900 font-semibold">- Ana P., Empresária</p>
+                    </div>
+                    <!-- Depoimento 2 -     
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md border border-gray-100 animate-fadeIn" style="animation-delay: 0.6s;">
+                        <blockquote class="text-gray-700 italic">
+                            "A agilidade e a transparência do escritório me impressionaram. Resolveram meu problema de forma rápida e eficiente. Recomendo a todos que buscam confiança e resultados."
+                        </blockquote>
+                        <p class="mt-4 text-gray-900 font-semibold">- Carlos S., Cliente de Direito Civil</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-28 bg-gray-50 rounded-t-[50px]">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6 animate-fadeIn">Entre em Contato</h2>
+                <p class="text-center text-gray-600 text-lg mb-12 max-w-3xl mx-auto animate-fadeIn" style="animation-delay: 0.2s;">
+                    Fale diretamente conosco pelo WhatsApp e agende sua consulta de forma rápida e segura.
+                </p>
+
+                <div class="max-w-xl mx-auto p-8 bg-white rounded-2xl shadow-lg border border-gray-100 animate-fadeIn text-center" style="animation-delay: 0.4s;">
+                    <a href="https://wa.me/5511987654321?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20jurídica." target="_blank" class="inline-flex items-center justify-center bg-[#25D366] text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-[#1DA851] transform hover:scale-105 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                            <path d="M22 15a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path>
+                            <path d="M10 13l4-4 4 4"></path>
+                        </svg>
+                        Fale conosco pelo WhatsApp
+                    </a>
+                    <p class="text-sm text-gray-500 mt-4">
+                        (11) 98765-4321
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12 rounded-t-[50px]">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-sm">
+                    &copy; 2024 Escritório Advogados. Todos os direitos reservados.
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+                        <!-- LinkedIn SVG Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22 17v3h-3v-5c0-1.2-.4-2-1.5-2-1-.6-2.5.4-2.5 1.5v5h-3v-11h3v1.5c.5-1 1.7-2 3.5-2 3.5 0 4.5 2 4.5 5.5zM4 6.5c-1 0-1.8.8-1.8 1.8 0 1 0 2 .5 2.5 1 1 2 0 2-1.5-.5-1-1.5-.5-1.5-2 0-.8-.8-1.8-1.7-1.8zM4 9h-2v11h2z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors duration-300" aria-label="Instagram">
+                        <!-- Instagram SVG Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.25 10.75c0 1.24-.96 2.25-2.25 2.25s-2.25-.96-2.25-2.25.96-2.25 2.25-2.25 2.25.96 2.25 2.25zM17.5 6.25c-.96 0-1.75.79-1.75 1.75s.79 1.75 1.75 1.75 1.75-.79 1.75-1.75-.79-1.75-1.75-1.75z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Toggle mobile menu visibility
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.getElementById(this.getAttribute('href').substring(1)).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
